@@ -200,8 +200,23 @@
   /**
    * Porfolio isotope and filter
    */
+   let portfolioContainer = select('.portfolio-container');
+   
+   let portfolioIsotope = new Isotope(portfolioContainer, {
+    itemSelector: '.portfolio-item'
+  });
+  
+  portfolioIsotope.arrange({
+    filter: '.filter-php',
+  });
+  portfolioIsotope.on('arrangeComplete', function() {
+    AOS.refresh()
+  });
+
   window.addEventListener('load', () => {
+    
     let portfolioContainer = select('.portfolio-container');
+
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
         itemSelector: '.portfolio-item'
@@ -217,7 +232,7 @@
         this.classList.add('filter-active');
 
         portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
+          filter: this.getAttribute('data-filter'),
         });
         portfolioIsotope.on('arrangeComplete', function() {
           AOS.refresh()
@@ -267,5 +282,7 @@
    * Initiate Pure Counter 
    */
   new PureCounter();
+
+  
 
 })()
