@@ -283,6 +283,9 @@
    */
   new PureCounter();
 
-  
+  setTimeout(() => {
+    const get= document.getElementById('php');
+    get.click();
+  }, 500);
 
 })()
