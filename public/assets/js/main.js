@@ -200,19 +200,6 @@
   /**
    * Porfolio isotope and filter
    */
-   let portfolioContainer = select('.portfolio-container');
-   
-   let portfolioIsotope = new Isotope(portfolioContainer, {
-    itemSelector: '.portfolio-item'
-  });
-  
-  portfolioIsotope.arrange({
-    filter: '.filter-php',
-  });
-  portfolioIsotope.on('arrangeComplete', function() {
-    AOS.refresh()
-  });
-
   window.addEventListener('load', () => {
     
     let portfolioContainer = select('.portfolio-container');
@@ -287,5 +274,17 @@
     const get= document.getElementById('php');
     get.click();
   }, 500);
+
+  $('#myDiv').floatingWhatsApp({
+    phone: '6281225533109',
+    popupMessage: 'apa yang bisa kami bantu?',
+    message: "Saya ingin konsultasi program bootcamp...",
+    showPopup: true,
+    showOnIE: false,
+    headerTitle: 'Welcome to Comentor!',
+    position : 'right',
+    autoOpenTimeout : 10000,
+    size : '65px',
+    });
 
 })()
